@@ -1,0 +1,32 @@
+.edit-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+.edit-btn {
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  background-color: bisque;
+  cursor: pointer;
+  font-size: large;
+  color: rgb(0, 0, 0);
+}
+
+.edit-btn:disabled {
+  color: rgb(143, 143, 143);
+}

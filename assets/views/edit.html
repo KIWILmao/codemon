@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <form class="edit-form" name="editForm" ng-submit="updateProduct()">
+        <div>
+          <label for="name">name</label>
+          <input
+            id="name"
+            type="text"
+            ng-model="name"
+            name="name"
+            ng-class="{'invalid': editForm.name.$touched && editForm.name.$invalid}"
+            required
+          />
+          <span ng-show="editForm.name.$touched && editForm.name.$invalid"
+            >Please enter name!</span
+          >
+        </div>
+        <div>
+          <label for="description">description</label>
+          <textarea
+            id="description"
+            ng-model="description"
+            name="description"
+            ng-class="{'invalid': editForm.description.$touched && editForm.description.$invalid}"
+            required
+          ></textarea>
+          <span
+            ng-show="editForm.description.$touched && editForm.description.$invalid"
+            >Please enter description!</span
+          >
+        </div>
+        <div>
+          <label for="price">price</label>
+          <input
+            id="price"
+            type="number"
+            ng-model="price"
+            name="price"
+            ng-class="{'invalid': editForm.price.$touched && editForm.price.$invalid}"
+            required
+          />
+          <span ng-show="editForm.price.$touched && editForm.price.$invalid"
+            >Please enter price!</span
+          >
+        </div>
+
+        <button
+          class="edit-btn"
+          ng-disabled="editForm.name.$invalid || editForm.price.$invalid ||editForm.description.$invalid"
+        >
+          save
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
